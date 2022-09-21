@@ -3,12 +3,11 @@
     <title>To-Do app</title>
   </head>
   <body>
-    <form>
-      <h1>What You Have To Do Today</h1>
-      <label>New Task</label>
-      <input type="text" />
-      <button id="mybtn">Enter</button>
-    </form>
+    <h1>What You Have To Do Today</h1>
+    <label>New Task</label>
+    <input id="box" type="text" />
+    <button id="mybtn">Enter</button>
+
     <ul id="work">
       <li><input type="checkbox" />go to temple</li>
       <li><input type="checkbox" />go to market</li>
@@ -16,6 +15,7 @@
       <li><input type="checkbox" />go to railway station</li>
     </ul>
     <script>
+      document.getElementById("mybtn").addEventListener("click", onclick);
       function add(todo) {
         var element = document.getElementById("work");
         var a = element.innerHTML;
@@ -23,9 +23,11 @@
         a = '<li><input type="checkbox" />' + todo + " </li>" + a;
         element.innerHTML = a;
       }
-      add("go to home");
-      add("hello");
-      add("uday");
+      function onclick() {
+        var i = document.getElementById("box");
+
+        add(i.value);
+      }
     </script>
   </body>
 </html>
