@@ -7,13 +7,25 @@
       <h1>What You Have To Do Today</h1>
       <label>New Task</label>
       <input type="text" />
-      <button>Enter</button>
+      <button id="mybtn">Enter</button>
     </form>
-    <ul>
+    <ul id="work">
       <li><input type="checkbox" />go to temple</li>
       <li><input type="checkbox" />go to market</li>
       <li><input type="checkbox" />go to school</li>
       <li><input type="checkbox" />go to railway station</li>
     </ul>
+    <script>
+      function add(todo) {
+        var element = document.getElementById("work");
+        var a = element.innerHTML;
+
+        a = '<li><input type="checkbox" />' + todo + " </li>" + a;
+        element.innerHTML = a;
+      }
+      add("go to home");
+      add("hello");
+      add("uday");
+    </script>
   </body>
 </html>
