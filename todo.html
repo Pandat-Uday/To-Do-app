@@ -1,33 +1,31 @@
 <html>
   <head>
     <title>To-Do app</title>
+    <link rel="stylesheet" href="To-Do.css" />
   </head>
   <body>
-    <h1>What You Have To Do Today</h1>
-    <label>New Task</label>
-    <input id="box" type="text" />
-    <button id="mybtn">Enter</button>
+    <div class="todo">
+      <p>What You Have To-Do Today</p>
+      <label>New Task</label>
+      <input id="box" type="text" />
+      <button id="mybtn">Enter</button>
 
-    <ul id="work">
-      <li><input type="checkbox" />go to temple</li>
-      <li><input type="checkbox" />go to market</li>
-      <li><input type="checkbox" />go to school</li>
-      <li><input type="checkbox" />go to railway station</li>
-    </ul>
-    <script>
-      document.getElementById("mybtn").addEventListener("click", onclick);
-      function add(todo) {
-        var element = document.getElementById("work");
-        var a = element.innerHTML;
+      <ul style="list-style: none" id="work"></ul>
+      <script>
+        document.getElementById("mybtn").addEventListener("click", onclick);
+        function add(todo) {
+          var element = document.getElementById("work");
+          var a = element.innerHTML;
 
-        a = '<li><input type="checkbox" />' + todo + " </li>" + a;
-        element.innerHTML = a;
-      }
-      function onclick() {
-        var i = document.getElementById("box");
+          a = '<li><input type="checkbox" />' + todo + " </li>" + a;
+          element.innerHTML = a;
+        }
+        function onclick() {
+          var i = document.getElementById("box");
 
-        add(i.value);
-      }
-    </script>
+          add(i.value);
+        }
+      </script>
+    </div>
   </body>
 </html>
